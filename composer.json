@@ -1,0 +1,21 @@
+{
+  "name": "gone.io/testing",
+  "description": "Unit testing toolkit",
+  "authors": [
+    {
+      "name": "Matthew Baggett",
+      "email": "matthew@baggett.me"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "phpunit/phpunit": "^7.0",
+    "phpunit/phpcov": "^5.0",
+    "facebook/webdriver": "^1.6",
+    "squizlabs/php_codesniffer": "3.*",
+    "friendsofphp/php-cs-fixer": "^2.0",
+    "johnkary/phpunit-speedtrap": "^3.0.0",
+    "brianium/paratest": "^2.0",
+    "fzaninotto/Faker": "^1.7.1"
+  }
+}
