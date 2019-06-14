@@ -7,7 +7,7 @@
       "email": "matthew@baggett.me"
     }
   ],
-  "license": ["GPL-3.0-or-later"],
+  "licence": "GPL-3.0+",
   "require": {
     "php": "^7.1",
     "phpunit/phpunit": "^7.0",
@@ -19,5 +19,10 @@
     "brianium/paratest": "^2.0",
     "fzaninotto/Faker": "^1.7.1",
     "symfony/var-dumper": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Gone\\Testing\\": "src/"
+    }
   }
 }
