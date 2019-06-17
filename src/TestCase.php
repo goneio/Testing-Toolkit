@@ -2,7 +2,9 @@
 
 namespace Gone\Testing;
 
+use Faker\Factory as FakerFactory;
 use Faker\Generator;
+use Faker\Provider;
 
 class TestCase extends \PHPUnit\Framework\TestCase
 {
