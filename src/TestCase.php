@@ -22,7 +22,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
 	 *
 	 * @var Generator $faker
 	 */
-	static private $faker;
+	static protected $faker;
 
 	private $defaultEnvironment = [];
 	private $defaultHeaders     = [];
