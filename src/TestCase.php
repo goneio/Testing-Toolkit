@@ -29,6 +29,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
 	private $startTime;
 
 	public function setUp(){
+		parent::setUp();
 		$this->defaultEnvironment = [
 			'SCRIPT_NAME' => '/index.php',
 			'RAND'        => rand(0, 100000000),
