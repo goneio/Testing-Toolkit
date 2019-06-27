@@ -26,6 +26,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
 
 	private $defaultEnvironment = [];
 	private $defaultHeaders     = [];
+	private $startTime;
 
 	public function setUp(){
 		$this->defaultEnvironment = [
@@ -33,6 +34,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
 			'RAND'        => rand(0, 100000000),
 		];
 		$this->defaultHeaders = [];
+		$this->startTime = microtime(true);
 	}
 
 	static public function setUpBeforeClass()
@@ -48,6 +50,15 @@ class TestCase extends \PHPUnit\Framework\TestCase
 		self::$faker->addProvider(new Provider\en_US\Address(self::$faker));
 		self::$faker->addProvider(new Provider\en_US\PhoneNumber(self::$faker));
 		self::$faker->addProvider(new Provider\en_US\Company(self::$faker));
+	}
+
+	protected function waypoint(string $label) : void
+	{
+		printf(
+			"[%s] %s\n",
+			number_format(microtime(true) - $this->startTime),
+			$label
+		);
 	}
 
 	private function getApp(){
