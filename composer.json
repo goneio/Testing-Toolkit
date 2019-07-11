@@ -16,7 +16,6 @@
     "squizlabs/php_codesniffer": "3.*",
     "friendsofphp/php-cs-fixer": "^2.0",
     "johnkary/phpunit-speedtrap": "^3.0.0",
-    "brianium/paratest": "^2.0",
     "fzaninotto/Faker": "^1.7.1",
     "symfony/var-dumper": "^3.0"
   },
