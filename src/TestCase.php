@@ -26,6 +26,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
 
     private $defaultEnvironment = [];
     private $defaultHeaders     = [];
+    private $startTime;
 
     public static function setUpBeforeClass()
     {
@@ -49,6 +50,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
             'RAND'        => rand(0, 100000000),
         ];
         $this->defaultHeaders = [];
+        $this->startTime = microtime(true);
         if (class_exists('Kint')) {
             \Kint::$max_depth = 0;
         }
@@ -134,6 +136,15 @@ class TestCase extends \PHPUnit\Framework\TestCase
         $response->getBody()->rewind();
 
         return $response;
+    }
+
+    protected function waypoint(string $label) : void
+    {
+        printf(
+            "[%s] %s\n",
+            number_format(microtime(true) - $this->startTime),
+            $label
+        );
     }
 
     protected function setEnvironmentVariable($key, $value)
