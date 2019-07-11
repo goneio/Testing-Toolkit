@@ -33,6 +33,9 @@ class TestCase extends \PHPUnit\Framework\TestCase
 			'RAND'        => rand(0, 100000000),
 		];
 		$this->defaultHeaders = [];
+        if(class_exists('Kint')) {
+            \Kint::$max_depth = 0;
+        }
 	}
 
 	static public function setUpBeforeClass()
