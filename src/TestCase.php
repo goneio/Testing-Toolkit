@@ -7,6 +7,7 @@ use Faker\Generator;
 use Faker\Provider;
 use Gone\AppCore\App;
 use Gone\AppCore\Router\Router;
+use Monolog\Logger;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Http\Environment;
 use Slim\Http\Headers;
@@ -27,6 +28,9 @@ class TestCase extends \PHPUnit\Framework\TestCase
     private $defaultEnvironment = [];
     private $defaultHeaders     = [];
     private $startTime;
+
+    /** @var Logger */
+    protected $logger;
 
     public static function setUpBeforeClass()
     {
@@ -54,6 +58,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
         if (class_exists('Kint')) {
             \Kint::$max_depth = 0;
         }
+        $this->logger = App::Container()->get(Logger::class);
     }
 
     /**
